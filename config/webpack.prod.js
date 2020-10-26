@@ -37,7 +37,12 @@ module.exports = merge(common, {
 						},
 					},
 					'postcss-loader',
-					'sass-loader',
+					{
+						loader: 'sass-loader',
+					},
+					{
+						loader: 'group-css-media-queries-loader',
+					},
 				],
 			},
 		],
