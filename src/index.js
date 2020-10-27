@@ -1,3 +1,3 @@
+import '~/sass/library/library'
+import '~/sass/main'
 import '~/scripts/index'
-import '~/assets/sass/library/library'
-import '~/assets/sass/main'
