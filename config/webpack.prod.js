@@ -37,10 +37,19 @@ module.exports = merge(common, {
 							sourceMap: false,
 						},
 					},
-					'postcss-loader',
 					{
-						loader: 'sass-loader',
+						loader: 'postcss-loader',
+						options: {
+							postcssOptions: {
+								plugins: [
+									['autoprefixer'],
+									['css-mqpacker'],
+									['postcss-size'],
+								],
+							},
+						},
 					},
+					'sass-loader',
 				],
 			},
 		],

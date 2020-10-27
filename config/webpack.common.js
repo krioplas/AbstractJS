@@ -28,7 +28,7 @@ module.exports = {
 		filename: `${paths.assets}js/[name].js`,
 		path: paths.build,
 		publicPath: './',
-		assetModuleFilename: `${paths.assets}/images/[hash][ext]`,
+		// assetModuleFilename: `${paths.assets}/images/[name][ext]`,
 	},
 
 	experiments: {
@@ -100,9 +100,9 @@ module.exports = {
 			{
 				test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
 				type: 'asset/resource',
-				// generator: {
-				// 	filename: `${paths.assets}/[hash][ext]`,
-				// },
+				generator: {
+					filename: `${paths.assets}[name][ext]`,
+				},
 				// options: {
 				// 	outputPath: `${paths.assets}/images`,
 				// },
