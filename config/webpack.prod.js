@@ -11,8 +11,9 @@ module.exports = merge(common, {
 	devtool: false,
 	output: {
 		path: paths.build,
-		publicPath: '/',
-		filename: 'js/[name].[contenthash].bundle.js',
+		publicPath: './',
+		filename: `${paths.assets}js/[name].js`,
+		// filename: 'js/[name].[contenthash].bundle.js',
 	},
 	plugins: [
 		// Extracts CSS into separate files
@@ -20,7 +21,7 @@ module.exports = merge(common, {
 		new MiniCssExtractPlugin({
 			// filename: 'styles/[name].[contenthash].css',
 			filename: `${paths.assets}styles/[name].[contenthash].css`,
-			chunkFilename: '[id].css',
+			// chunkFilename: '[id].css',
 		}),
 	],
 	module: {
@@ -40,9 +41,6 @@ module.exports = merge(common, {
 					{
 						loader: 'sass-loader',
 					},
-					{
-						loader: 'group-css-media-queries-loader',
-					},
 				],
 			},
 		],
@@ -53,9 +51,10 @@ module.exports = merge(common, {
 		// Once your build outputs multiple chunks, this option will ensure they share the webpack runtime
 		// instead of having their own. This also helps with long-term caching, since the chunks will only
 		// change when actual code changes, not the webpack runtime.
-		runtimeChunk: {
-			name: 'runtime',
-		},
+
+		// runtimeChunk: {
+		// 	name: 'runtime',
+		// },
 	},
 	performance: {
 		hints: false,

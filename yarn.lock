@@ -2137,6 +2137,14 @@ css-minimizer-webpack-plugin@^1.1.5:
     source-map "^0.6.1"
     webpack-sources "^1.4.3"
 
+css-mqpacker@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/css-mqpacker/-/css-mqpacker-7.0.0.tgz#48f4a0ff45b81ec661c4a33ed80b9db8a026333b"
+  integrity sha512-temVrWS+sB4uocE2quhW8ru/KguDmGhCU7zN213KxtDvWOH3WS/ZUStfpF4fdCT7W8fPpFrQdWRFqtFtPPfBLA==
+  dependencies:
+    minimist "^1.2.0"
+    postcss "^7.0.0"
+
 css-prefers-color-scheme@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/css-prefers-color-scheme/-/css-prefers-color-scheme-3.1.1.tgz#6f830a2714199d4f0d0d0bb8a27916ed65cff1f4"
@@ -3179,13 +3187,6 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.2.4:
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.4.tgz#2256bde14d3632958c465ebc96dc467ca07a29fb"
   integrity sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs/VsQYRvrXctxktVXZUkixw==
 
-group-css-media-queries-loader@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/group-css-media-queries-loader/-/group-css-media-queries-loader-3.0.2.tgz#5df0d97a1edbfd635c5dbccfaafa1c378abbc48f"
-  integrity sha512-ImySrudXi2QcilpE3wX6zWfLBFvmYrU4s7ta6G2rHoIVVMSy+v3AjNmhT8bsMty0ypLsVfi6+6jG5KV1NNx/9Q==
-  dependencies:
-    loader-utils "^1.1.0"
-
 handle-thing@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/handle-thing/-/handle-thing-2.0.1.tgz#857f79ce359580c340d43081cc648970d0bb234e"
@@ -4026,7 +4027,7 @@ loader-runner@^4.1.0:
   resolved "https://registry.yarnpkg.com/loader-runner/-/loader-runner-4.1.0.tgz#f70bc0c29edbabdf2043e7ee73ccc3fe1c96b42d"
   integrity sha512-oR4lB4WvwFoC70ocraKhn5nkKSs23t57h9udUgw8o0iH8hMXeEoRuUgfcvgUwAJ1ZpRqBvcou4N2SMvM1DwMrA==
 
-loader-utils@^1.1.0, loader-utils@^1.2.3, loader-utils@^1.4.0:
+loader-utils@^1.2.3, loader-utils@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-1.4.0.tgz#c579b5e34cb34b1a74edc6c1fb36bfa371d5a613"
   integrity sha512-qH0WSMBtn/oHuwjy/NucEgbx5dbxxnxup9s4PVXJUDHZBQY+s0NWA9rJf53RBnQZxfch7euUui7hpoAPvALZdA==
@@ -5527,6 +5528,11 @@ postcss-selector-parser@^6.0.2, postcss-selector-parser@^6.0.4:
     indexes-of "^1.0.1"
     uniq "^1.0.1"
     util-deprecate "^1.0.2"
+
+postcss-size@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/postcss-size/-/postcss-size-4.0.1.tgz#6e2e16a831de65f41e2efe213f7535117e61104f"
+  integrity sha512-XmQZWYiM21oeU85xSFdAbTrz0tY4PYo04TBAgSxnDGXrLYbvz/p8EGtNKApt6gC5hd2fQ3M8fhxeFfoMehJbGA==
 
 postcss-svgo@^4.0.2:
   version "4.0.2"

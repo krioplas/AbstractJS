@@ -26,8 +26,13 @@ module.exports = {
 
 	output: {
 		filename: `${paths.assets}js/[name].js`,
-		path: paths.dist,
-		publicPath: '/',
+		path: paths.build,
+		publicPath: './',
+		assetModuleFilename: `${paths.assets}/images/[hash][ext]`,
+	},
+
+	experiments: {
+		asset: true,
 	},
 
 	resolve: {
@@ -58,24 +63,11 @@ module.exports = {
 					to: `${paths.assets}images`,
 				},
 				{ from: `${paths.src}/static`, to: `` },
-				// {
-				// 	from: paths.src + paths.assets,
-				// 	to: paths.dist,
-				// 	globOptions: {
-				// 		ignore: ['*.DS_Store'],
-				// 	},
-				// },
 			],
 		}),
 
 		// Generates an HTML file from a template
 		// Generates deprecation warning: https://github.com/jantimon/html-webpack-plugin/issues/1501
-		// new HtmlWebpackPlugin({
-		// 	title: 'webpack',
-		// 	favicon: paths.src + '/static/favicon.ico',
-		// 	template: paths.src + '/index.html',
-		// 	filename: 'index.html',
-		// }),
 
 		...PAGES.map(
 			page =>
@@ -105,28 +97,31 @@ module.exports = {
 				],
 			},
 
-			// Styles: Inject CSS into the head with source maps
 			{
-				test: /\.(sa|sc|c)ss$/,
-				use: [
-					'style-loader',
-					{
-						loader: 'css-loader',
-						options: { sourceMap: true, importLoaders: 1 },
-					},
-					{
-						loader: 'postcss-loader',
-						options: {
-							sourceMap: true,
-						},
-					},
-					{ loader: 'sass-loader', options: { sourceMap: true } },
-				],
+				test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+				type: 'asset/resource',
+				// generator: {
+				// 	filename: `${paths.assets}/[hash][ext]`,
+				// },
+				// options: {
+				// 	outputPath: `${paths.assets}/images`,
+				// },
 			},
-
-			{ test: /\.(?:ico|gif|png|jpg|jpeg)$/i, type: 'asset/resource' },
 
 			{ test: /\.(woff(2)?|eot|ttf|otf|svg|)$/, type: 'asset/inline' },
 		],
+	},
+	optimization: {
+		splitChunks: {
+			chunks: 'all',
+			cacheGroups: {
+				vendor: {
+					name: 'vendors',
+					test: /[\\/]node_modules[\\/]/,
+					chunks: 'all',
+					enforce: true,
+				},
+			},
+		},
 	},
 }
