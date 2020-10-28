@@ -4,6 +4,7 @@ const fs = require('fs')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
+const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default
 
 const PAGES_DIR = paths.src
 
@@ -28,7 +29,7 @@ module.exports = {
 		filename: `${paths.assets}js/[name].js`,
 		path: paths.build,
 		publicPath: './',
-		// assetModuleFilename: `${paths.assets}/images/[name][ext]`,
+		assetModuleFilename: `${paths.assets}/img/[name][ext]`,
 	},
 
 	experiments: {
@@ -100,15 +101,24 @@ module.exports = {
 			{
 				test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
 				type: 'asset/resource',
-				generator: {
-					filename: `${paths.assets}[name][ext]`,
-				},
-				// options: {
-				// 	outputPath: `${paths.assets}/images`,
+				// generator: {
+				// 	filename: `${paths.assets}img/[name].webp`,
 				// },
+
+				use: [
+					{
+						loader: 'webp-loader',
+						options: {
+							quality: 70,
+						},
+					},
+				],
 			},
 
-			{ test: /\.(woff(2)?|eot|ttf|otf|svg|)$/, type: 'asset/inline' },
+			{
+				test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
+				type: 'asset/inline',
+			},
 		],
 	},
 	optimization: {

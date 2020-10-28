@@ -1,6 +1,7 @@
 const paths = require('./paths')
 const { merge } = require('webpack-merge')
 const common = require('./webpack.common.js')
+const path = require('path')
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
@@ -12,8 +13,7 @@ module.exports = merge(common, {
 	output: {
 		path: paths.build,
 		publicPath: './',
-		filename: `${paths.assets}js/[name].js`,
-		// filename: 'js/[name].[contenthash].bundle.js',
+		filename: `${paths.assets}js/[name].[contenthash].js`,
 	},
 	plugins: [
 		// Extracts CSS into separate files
@@ -41,11 +41,7 @@ module.exports = merge(common, {
 						loader: 'postcss-loader',
 						options: {
 							postcssOptions: {
-								plugins: [
-									['autoprefixer'],
-									['css-mqpacker'],
-									['postcss-size'],
-								],
+								config: path.resolve(__dirname, '../postcss.config.js'),
 							},
 						},
 					},

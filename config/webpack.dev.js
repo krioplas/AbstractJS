@@ -14,6 +14,10 @@ module.exports = merge(common, {
 		contentBase: paths.build,
 		open: true,
 		compress: true,
+		overlay: {
+			warnings: true,
+			errors: true,
+		},
 		hot: true,
 		port: 8080,
 	},
