@@ -1,4 +1,4 @@
-const paths = require('./paths')
+const PATHS = require('./paths')
 
 const webpack = require('webpack')
 const { merge } = require('webpack-merge')
@@ -10,16 +10,16 @@ module.exports = merge(common, {
 	devtool: 'inline-source-map',
 
 	devServer: {
+		// hot: true,
 		historyApiFallback: true,
-		contentBase: paths.build,
+		contentBase: PATHS.build,
 		open: true,
 		compress: true,
+		port: 8080,
 		overlay: {
 			warnings: true,
 			errors: true,
 		},
-		hot: true,
-		port: 8080,
 	},
 
 	plugins: [new webpack.HotModuleReplacementPlugin()],

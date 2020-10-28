@@ -1,35 +1,28 @@
-const paths = require('./paths')
+const PATHS = require('./paths')
 const fs = require('fs')
 
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
-const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default
+// const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default
+const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin')
 
-const PAGES_DIR = paths.src
+const PAGES_DIR = PATHS.src
 
 const PAGES = fs
 	.readdirSync(PAGES_DIR)
 	.filter(fileName => fileName.endsWith('.html'))
 
 module.exports = {
-	// entry: [paths.src + '/index.js'],
-
 	entry: {
-		app: ['@babel/polyfill', `${paths.src}/index.js`],
+		app: ['@babel/polyfill', `${PATHS.src}/index.js`],
 	},
 
-	// output: {
-	// 	path: paths.build,
-	// 	filename: '[name].bundle.js',
-	// 	publicPath: '/',
-	// },
-
 	output: {
-		filename: `${paths.assets}js/[name].js`,
-		path: paths.build,
+		filename: `${PATHS.assets}js/[name].js`,
+		path: PATHS.build,
 		publicPath: './',
-		assetModuleFilename: `${paths.assets}/img/[name][ext]`,
+		// assetModuleFilename: `${PATHS.assets}/img/[name][ext]`,
 	},
 
 	experiments: {
@@ -50,30 +43,46 @@ module.exports = {
 			'.scss',
 		],
 		alias: {
-			'~': paths.src,
+			'~': PATHS.src,
 		},
 	},
 
 	plugins: [
 		new CleanWebpackPlugin(),
 
-		new CopyWebpackPlugin({
-			patterns: [
-				{
-					from: `${paths.src}/${paths.assets}images`,
-					to: `${paths.assets}images`,
-				},
-				{ from: `${paths.src}/static`, to: `` },
-			],
-		}),
+		// new CopyWebpackPlugin({
+		// 	patterns: [
+		// 		{
+		// 			from: `${PATHS.src}/${PATHS.assets}images`,
+		// 			to: `${PATHS.assets}images`,
+		// 		},
+		// 		{
+		// 			from: `${PATHS.src}/${PATHS.assets}fonts`,
+		// 			to: `${PATHS.assets}fonts`,
+		// 		},
+		// 		{ from: `${PATHS.src}/static`, to: '' },
+		// 	],
+		// }),
 
 		// Generates an HTML file from a template
 		// Generates deprecation warning: https://github.com/jantimon/html-webpack-plugin/issues/1501
 
+		new ImageminWebpWebpackPlugin({
+			config: [
+				{
+					test: /\.(jpe?g|png)/,
+					options: {
+						quality: 75,
+					},
+				},
+			],
+			detailedLogs: true,
+		}),
+
 		...PAGES.map(
 			page =>
 				new HTMLWebpackPlugin({
-					favicon: paths.src + '/static/favicon.ico',
+					favicon: PATHS.src + '/static/favicon.ico',
 					template: `${PAGES_DIR}/${page}`,
 					filename: `./${page}`,
 				})
@@ -100,12 +109,15 @@ module.exports = {
 
 			{
 				test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-				type: 'asset/resource',
-				// generator: {
-				// 	filename: `${paths.assets}img/[name].webp`,
-				// },
+				// type: 'asset/resource',
 
 				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							name: 'assets/[ext]/[hash:2]-[name].[ext]',
+						},
+					},
 					{
 						loader: 'webp-loader',
 						options: {
