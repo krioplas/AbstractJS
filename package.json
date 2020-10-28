@@ -22,7 +22,7 @@
 		]
 	},
 	"scripts": {
-		"serve": "cross-env NODE_ENV=development webpack serve --hot --watch --color --progress --inline --config config/webpack.dev.js",
+		"serve": "cross-env NODE_ENV=development webpack serve --watch --color --progress --inline --config config/webpack.dev.js",
 		"build": "cross-env NODE_ENV=production webpack --watch --color --progress --config config/webpack.prod.js"
 	},
 	"devDependencies": {

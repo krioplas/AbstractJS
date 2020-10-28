@@ -22,11 +22,10 @@ module.exports = {
 		filename: `${PATHS.assets}js/[name].js`,
 		path: PATHS.build,
 		publicPath: './',
-		// assetModuleFilename: `${PATHS.assets}/img/[name][ext]`,
 	},
 
 	experiments: {
-		asset: true,
+		asset: false,
 	},
 
 	resolve: {
@@ -50,19 +49,19 @@ module.exports = {
 	plugins: [
 		new CleanWebpackPlugin(),
 
-		// new CopyWebpackPlugin({
-		// 	patterns: [
-		// 		{
-		// 			from: `${PATHS.src}/${PATHS.assets}images`,
-		// 			to: `${PATHS.assets}images`,
-		// 		},
-		// 		{
-		// 			from: `${PATHS.src}/${PATHS.assets}fonts`,
-		// 			to: `${PATHS.assets}fonts`,
-		// 		},
-		// 		{ from: `${PATHS.src}/static`, to: '' },
-		// 	],
-		// }),
+		new CopyWebpackPlugin({
+			patterns: [
+				{
+					from: `${PATHS.src}/${PATHS.assets}images`,
+					to: `${PATHS.assets}images`,
+				},
+				{
+					from: `${PATHS.src}/${PATHS.assets}fonts`,
+					to: `${PATHS.assets}fonts`,
+				},
+				{ from: `${PATHS.src}/static`, to: '' },
+			],
+		}),
 
 		// Generates an HTML file from a template
 		// Generates deprecation warning: https://github.com/jantimon/html-webpack-plugin/issues/1501
@@ -115,7 +114,7 @@ module.exports = {
 					{
 						loader: 'file-loader',
 						options: {
-							name: 'assets/[ext]/[hash:2]-[name].[ext]',
+							name: 'assets/images/[name].[ext]',
 						},
 					},
 					{

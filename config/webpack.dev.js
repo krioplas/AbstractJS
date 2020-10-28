@@ -10,11 +10,12 @@ module.exports = merge(common, {
 	devtool: 'inline-source-map',
 
 	devServer: {
-		// hot: true,
 		historyApiFallback: true,
+		watchContentBase: true,
 		contentBase: PATHS.build,
 		open: true,
 		compress: true,
+		hot: true,
 		port: 8080,
 		overlay: {
 			warnings: true,
@@ -22,7 +23,10 @@ module.exports = merge(common, {
 		},
 	},
 
-	plugins: [new webpack.HotModuleReplacementPlugin()],
+	plugins: [
+		// Only update what has changed on hot reload
+		new webpack.HotModuleReplacementPlugin(),
+	],
 
 	module: {
 		rules: [
