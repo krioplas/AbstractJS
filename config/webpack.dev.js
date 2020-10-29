@@ -14,6 +14,7 @@ module.exports = merge(common, {
 		watchContentBase: true,
 		contentBase: PATHS.build,
 		open: true,
+		clientLogLevel: 'info',
 		compress: true,
 		hot: true,
 		port: 8080,

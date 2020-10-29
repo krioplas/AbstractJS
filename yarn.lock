@@ -1875,9 +1875,9 @@ camelcase@^5.0.0:
   integrity sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==
 
 camelcase@^6.1.0:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-6.1.0.tgz#27dc176173725fb0adf8a48b647f4d7871944d78"
-  integrity sha512-WCMml9ivU60+8rEJgELlFp1gxFcEGxwYleE3bziHEDeqsqAWGHdimB7beBFGjLzVNgPGyDsfgXLQEYMpmIFnVQ==
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-6.2.0.tgz#924af881c9d525ac9d87f40d964e5cea982a1809"
+  integrity sha512-c7wVvbw3f37nuobQNtgsgG9POC9qMbNuMQmTCqZv23b6MIz0fcYpBiOlv9gEN/hdLdnZTDQhg6e9Dq5M1vKvfg==
 
 caniuse-api@^3.0.0:
   version "3.0.0"
@@ -1890,9 +1890,9 @@ caniuse-api@^3.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000981, caniuse-lite@^1.0.30001109, caniuse-lite@^1.0.30001135, caniuse-lite@^1.0.30001137:
-  version "1.0.30001151"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001151.tgz#1ddfde5e6fff02aad7940b4edb7d3ac76b0cb00b"
-  integrity sha512-Zh3sHqskX6mHNrqUerh+fkf0N72cMxrmflzje/JyVImfpknscMnkeJrlFGJcqTmaa0iszdYptGpWMJCRQDkBVw==
+  version "1.0.30001153"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001153.tgz#9a0942fe777cd7178fb084693b79415ff747ecd9"
+  integrity sha512-qv14w7kWwm2IW7DBvAKWlCqGTmV2XxNtSejJBVplwRjhkohHuhRUpeSlPjtu9erru0+A12zCDUiSmvx/AcqVRA==
 
 caseless@~0.12.0:
   version "0.12.0"
@@ -2374,14 +2374,6 @@ css-minimizer-webpack-plugin@^1.1.5:
     serialize-javascript "^5.0.1"
     source-map "^0.6.1"
     webpack-sources "^1.4.3"
-
-css-mqpacker@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/css-mqpacker/-/css-mqpacker-7.0.0.tgz#48f4a0ff45b81ec661c4a33ed80b9db8a026333b"
-  integrity sha512-temVrWS+sB4uocE2quhW8ru/KguDmGhCU7zN213KxtDvWOH3WS/ZUStfpF4fdCT7W8fPpFrQdWRFqtFtPPfBLA==
-  dependencies:
-    minimist "^1.2.0"
-    postcss "^7.0.0"
 
 css-prefers-color-scheme@^3.1.1:
   version "3.1.1"
@@ -3815,6 +3807,13 @@ graceful-fs@^4.1.10, graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.2.2
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.4.tgz#2256bde14d3632958c465ebc96dc467ca07a29fb"
   integrity sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs/VsQYRvrXctxktVXZUkixw==
 
+group-css-media-queries-loader@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/group-css-media-queries-loader/-/group-css-media-queries-loader-3.0.2.tgz#5df0d97a1edbfd635c5dbccfaafa1c378abbc48f"
+  integrity sha512-ImySrudXi2QcilpE3wX6zWfLBFvmYrU4s7ta6G2rHoIVVMSy+v3AjNmhT8bsMty0ypLsVfi6+6jG5KV1NNx/9Q==
+  dependencies:
+    loader-utils "^1.1.0"
+
 handle-thing@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/handle-thing/-/handle-thing-2.0.1.tgz#857f79ce359580c340d43081cc648970d0bb234e"
@@ -4905,7 +4904,7 @@ loader-utils@1.2.3:
     emojis-list "^2.0.0"
     json5 "^1.0.1"
 
-loader-utils@^1.2.3, loader-utils@^1.4.0:
+loader-utils@^1.1.0, loader-utils@^1.2.3, loader-utils@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-1.4.0.tgz#c579b5e34cb34b1a74edc6c1fb36bfa371d5a613"
   integrity sha512-qH0WSMBtn/oHuwjy/NucEgbx5dbxxnxup9s4PVXJUDHZBQY+s0NWA9rJf53RBnQZxfch7euUui7hpoAPvALZdA==
@@ -7145,10 +7144,10 @@ sass-loader@^10.0.4:
     schema-utils "^3.0.0"
     semver "^7.3.2"
 
-sass@^1.27.0:
-  version "1.27.0"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.27.0.tgz#0657ff674206b95ec20dc638a93e179c78f6ada2"
-  integrity sha512-0gcrER56OkzotK/GGwgg4fPrKuiFlPNitO7eUJ18Bs+/NBlofJfMxmxqpqJxjae9vu0Wq8TZzrSyxZal00WDig==
+sass@^1.27.1:
+  version "1.27.1"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.27.1.tgz#fe4c730f2abfe1502ecff047798b35a7b792dc03"
+  integrity sha512-Co5i3s4kN0AgXe8ZFfIl4pfjHjPgotT81O68m3buwdj7v3oHjYiWNqp0oXTKXnEqyKU30KAYC5u8uUF4x+BKfw==
   dependencies:
     chokidar ">=2.0.0 <4.0.0"
 
@@ -8358,9 +8357,9 @@ webpack-sources@^1.1.0, webpack-sources@^1.4.3:
     source-map "~0.6.1"
 
 webpack-sources@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/webpack-sources/-/webpack-sources-2.1.1.tgz#6922dc1bf7f7f95aab56675535b6e20f87b9147f"
-  integrity sha512-hraq9n99K564zuZUsE61iATO3jvzxOmGo20UlOe3zgdHOBp8inTJgv7EY4RgvCv7Ywx0/vpQTyYSjnFpv4gNtQ==
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/webpack-sources/-/webpack-sources-2.2.0.tgz#058926f39e3d443193b6c31547229806ffd02bac"
+  integrity sha512-bQsA24JLwcnWGArOKUxYKhX3Mz/nK1Xf6hxullKERyktjNMC4x8koOeaDNTA2fEJ09BdWLbM/iTW0ithREUP0w==
   dependencies:
     source-list-map "^2.0.1"
     source-map "^0.6.1"

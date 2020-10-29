@@ -4,11 +4,14 @@
 		.user
 			&-block
 				background: $white
+				border-radius: $trs
 			&-header
 				display: flex
 				justify-content: space-between
 				align-items: center
 				border: 1px solid $border
+				border-top-left-radius: $trs
+				border-top-right-radius: $trs
 				background: $gray-lighten
 				padding: 1rem 1.75rem
 			&-account
@@ -34,6 +37,8 @@
 			&-actions
 				border: 1px solid $border
 				border-top: none
+				border-bottom-left-radius: $trs
+				border-bottom-right-radius: $trs
 			&-li
 				&__link
 					display: block
@@ -62,8 +67,11 @@
 		.comment
 			&-block
 				background: $white
+				border-radius: $trs
 			&-header
 				border: 1px solid $border
+				border-top-left-radius: $trs
+				border-top-right-radius: $trs
 				background: $gray-lighten
 				padding: 1rem 1.75rem
 				&__title
@@ -74,6 +82,8 @@
 			&-body
 				padding: 1.57rem 2.85rem 2.1rem 1.78rem
 				border: 1px solid $border
+				border-bottom-left-radius: $trs
+				border-bottom-right-radius: $trs
 				border-top: none
 				&__title
 					font-size: 1rem
@@ -95,7 +105,10 @@
 		background-size: cover
 		background-position: center
 		border: 1px solid $border
+		box-sizing: content-box
+		border-radius: $trs
 		position: relative
+		overflow: hidden
 		&::before
 			content: 'Реклама'
 			position: absolute
@@ -108,7 +121,3 @@
 			font-size: 0.85rem
 			line-height: 1.42rem
 			+SFRegular
-
-@media screen and ( max-width: 980px )
-	.sidebar
-		flex-basis: fill
