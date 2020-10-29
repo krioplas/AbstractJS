@@ -12,11 +12,11 @@ module.exports = merge(common, {
 	output: {
 		path: paths.build,
 		publicPath: './',
-		filename: `${paths.assets}js/[name].[contenthash].js`,
+		filename: `${paths.assets}js/[name].[contenthash:5].js`,
 	},
 	plugins: [
 		new MiniCssExtractPlugin({
-			filename: `${paths.assets}styles/[name].[contenthash].css`,
+			filename: `${paths.assets}styles/[name].[contenthash:5].css`,
 		}),
 	],
 	module: {
@@ -40,8 +40,8 @@ module.exports = merge(common, {
 							},
 						},
 					},
+					{ loader: 'group-css-media-queries-loader' },
 					'sass-loader',
-					'group-css-media-queries-loader',
 				],
 			},
 		],
