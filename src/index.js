@@ -1,3 +1,3 @@
-import '~/sass/library/library'
-import '~/sass/main'
-import '~/scripts/index'
+import '~/sass/library/library.scss'
+import '~/sass/main.sass'
+import '~/scripts/index.js'
