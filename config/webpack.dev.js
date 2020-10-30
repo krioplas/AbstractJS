@@ -11,26 +11,23 @@ module.exports = merge(common, {
 
 	devServer: {
 		historyApiFallback: true,
-		contentBase: PATHS.build,
-		inline: true,
-		open: true,
-		clientLogLevel: 'info',
-		compress: true,
-		port: 3000,
-		hotOnly: false,
-		liveReload: true,
-		overlay: {
-			warnings: true,
-			errors: true,
-		},
+		contentBase: PATHS.build + '/',
 		hot: true,
+		port: 3000,
+		open: true,
+		inline: true,
+		overlay: true,
 		watchContentBase: true,
+		compress: true,
+		// 	useLocalIp: true,
+		// clientLogLevel: 'info',
+		// overlay: {
+		// 	warnings: true,
+		// 	errors: true,
+		// },
 	},
 
-	plugins: [
-		// Only update what has changed on hot reload
-		new webpack.HotModuleReplacementPlugin(),
-	],
+	plugins: [new webpack.HotModuleReplacementPlugin()],
 
 	module: {
 		rules: [

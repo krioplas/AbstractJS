@@ -88,10 +88,8 @@ module.exports = {
 		),
 	],
 
-	// Determine how modules within the project are treated
 	module: {
 		rules: [
-			// JavaScript: Use Babel to transpile JavaScript files
 			{
 				test: /\.js$/,
 				exclude: /node_modules/,
@@ -108,7 +106,6 @@ module.exports = {
 
 			{
 				test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-				// type: 'asset/resource',
 
 				use: [
 					{
