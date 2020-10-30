@@ -3,7 +3,6 @@ const PATHS = require('./paths')
 const webpack = require('webpack')
 const { merge } = require('webpack-merge')
 const common = require('./webpack.common.js')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = merge(common, {
 	mode: 'development',
@@ -18,6 +17,8 @@ module.exports = merge(common, {
 		clientLogLevel: 'info',
 		compress: true,
 		port: 3000,
+		hotOnly: false,
+		liveReload: true,
 		overlay: {
 			warnings: true,
 			errors: true,
@@ -37,13 +38,6 @@ module.exports = merge(common, {
 				test: /\.(sa|sc|c)ss$/,
 				use: [
 					'style-loader',
-					// {
-					// 	loader: MiniCssExtractPlugin.loader,
-					// 	options: {
-					// 		hmr: true,
-					// 		reloadAll: true,
-					// 	},
-					// },
 					{
 						loader: 'css-loader',
 						options: { sourceMap: true, importLoaders: 1 },
