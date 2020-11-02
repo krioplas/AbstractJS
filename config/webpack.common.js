@@ -25,7 +25,7 @@ module.exports = {
 	},
 
 	experiments: {
-		asset: false,
+		asset: true,
 	},
 
 	resolve: {

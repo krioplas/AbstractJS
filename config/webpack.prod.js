@@ -32,15 +32,8 @@ module.exports = merge(common, {
 							sourceMap: false,
 						},
 					},
-					{
-						loader: 'postcss-loader',
-						options: {
-							postcssOptions: {
-								config: path.resolve(__dirname, '../postcss.config.js'),
-							},
-						},
-					},
-					{ loader: 'group-css-media-queries-loader' },
+					'postcss-loader',
+					'group-css-media-queries-loader',
 					'sass-loader',
 				],
 			},

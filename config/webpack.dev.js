@@ -13,18 +13,21 @@ module.exports = merge(common, {
 		historyApiFallback: true,
 		contentBase: PATHS.build,
 		hot: true,
-		port: 3000,
 		open: true,
-		inline: true,
-		overlay: true,
-		watchContentBase: true,
+		// overlay: true,
+		port: 8080,
 		compress: true,
-		// 	useLocalIp: true,
-		// clientLogLevel: 'info',
-		// overlay: {
-		// 	warnings: true,
-		// 	errors: true,
-		// },
+		inline: true,
+		// useLocalIp: true,
+		clientLogLevel: 'info',
+		overlay: {
+			warnings: true,
+			errors: true,
+		},
+	},
+
+	stats: {
+		colors: true,
 	},
 
 	plugins: [new webpack.HotModuleReplacementPlugin()],
@@ -39,12 +42,7 @@ module.exports = merge(common, {
 						loader: 'css-loader',
 						options: { sourceMap: true, importLoaders: 1 },
 					},
-					{
-						loader: 'postcss-loader',
-						options: {
-							sourceMap: true,
-						},
-					},
+					{ loader: 'postcss-loader', options: { sourceMap: true } },
 					{ loader: 'sass-loader', options: { sourceMap: true } },
 				],
 			},
