@@ -1,10 +1,11 @@
 const paths = require('./paths')
 const { merge } = require('webpack-merge')
 const common = require('./webpack.common.js')
-const path = require('path')
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+	.BundleAnalyzerPlugin
 
 module.exports = merge(common, {
 	mode: 'production',
@@ -18,6 +19,7 @@ module.exports = merge(common, {
 		new MiniCssExtractPlugin({
 			filename: `${paths.assets}styles/[name].[contenthash:5].css`,
 		}),
+		new BundleAnalyzerPlugin(),
 	],
 	module: {
 		rules: [
