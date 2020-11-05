@@ -20,6 +20,8 @@ module.exports = {
 		app: ['@babel/polyfill', `${PATHS.src}/index.js`],
 	},
 
+	target: 'web',
+
 	output: {
 		filename: `${PATHS.assets}js/[name].js`,
 		path: PATHS.build,

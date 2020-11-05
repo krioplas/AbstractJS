@@ -1,4 +1,4 @@
-const PATHS = require('./paths')
+// const PATHS = require('./paths')
 
 const webpack = require('webpack')
 const { merge } = require('webpack-merge')
@@ -11,7 +11,7 @@ module.exports = merge(common, {
 
 	devServer: {
 		historyApiFallback: true,
-		contentBase: PATHS.build,
+		// contentBase: PATHS.build,
 		hot: true,
 		open: true,
 		port: 3000,

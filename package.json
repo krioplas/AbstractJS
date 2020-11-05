@@ -12,7 +12,7 @@
 		"npm": ">= 3.0.0"
 	},
 	"scripts": {
-		"serve": "cross-env NODE_ENV=development webpack serve --hot --inline --color --progress --config config/webpack.dev.js",
+		"serve": "cross-env NODE_ENV=development webpack serve --color --progress --config config/webpack.dev.js",
 		"build": "cross-env NODE_ENV=production webpack --color --progress --config config/webpack.prod.js"
 	},
 	"browserslist": {
