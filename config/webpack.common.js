@@ -13,6 +13,8 @@ const PAGES = fs
 	.readdirSync(PAGES_DIR)
 	.filter(fileName => fileName.endsWith('.html'))
 
+process.traceDeprecation = true
+
 module.exports = {
 	entry: {
 		app: ['@babel/polyfill', `${PATHS.src}/index.js`],
@@ -59,6 +61,10 @@ module.exports = {
 					from: `${PATHS.src}/${PATHS.assets}fonts`,
 					to: `${PATHS.assets}fonts`,
 				},
+				{
+					from: `${PATHS.src}/${PATHS.assets}svg`,
+					to: `${PATHS.assets}svg`,
+				},
 				{ from: `${PATHS.src}/static`, to: '' },
 			],
 		}),
@@ -102,7 +108,7 @@ module.exports = {
 				],
 			},
 			{
-				test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+				test: /\.(?:ico|gif|png|jpg|jpeg|svg|webp)$/i,
 				use: [
 					{
 						loader: 'file-loader',
@@ -119,7 +125,7 @@ module.exports = {
 				],
 			},
 			{
-				test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
+				test: /\.(woff(2)?|eot|ttf|otf|svg)$/,
 				type: 'asset/inline',
 			},
 		],

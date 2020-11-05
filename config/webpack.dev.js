@@ -14,8 +14,7 @@ module.exports = merge(common, {
 		contentBase: PATHS.build,
 		hot: true,
 		open: true,
-		// overlay: true,
-		port: 8080,
+		port: 3000,
 		compress: true,
 		inline: true,
 		// useLocalIp: true,
@@ -24,10 +23,6 @@ module.exports = merge(common, {
 			warnings: true,
 			errors: true,
 		},
-	},
-
-	stats: {
-		colors: true,
 	},
 
 	plugins: [new webpack.HotModuleReplacementPlugin()],
