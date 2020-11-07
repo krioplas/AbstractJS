@@ -4,7 +4,6 @@ const fs = require('fs')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
-// const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default
 const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin')
 
 const PAGES_DIR = PATHS.src
@@ -125,6 +124,14 @@ module.exports = {
 						},
 					},
 				],
+			},
+			{
+				test: /\.xml$/,
+				use: ['xml-loader'],
+			},
+			{
+				test: /\.csv$/,
+				use: ['csv-loader'],
 			},
 			{
 				test: /\.(woff(2)?|eot|ttf|otf|svg)$/,

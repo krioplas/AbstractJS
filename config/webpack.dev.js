@@ -14,7 +14,7 @@ module.exports = merge(common, {
 		contentBase: PATHS.build,
 		watchContentBase: true,
 		open: true,
-		port: 3000,
+		port: 8080,
 		compress: true,
 		inline: true,
 		overlay: {
