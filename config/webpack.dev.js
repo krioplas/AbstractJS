@@ -13,13 +13,10 @@ module.exports = merge(common, {
 		historyApiFallback: true,
 		contentBase: PATHS.build,
 		watchContentBase: true,
-		hot: true,
 		open: true,
 		port: 3000,
 		compress: true,
 		inline: true,
-		// useLocalIp: true,
-		// clientLogLevel: 'info',
 		overlay: {
 			warnings: true,
 			errors: true,
