@@ -1,1 +1,1 @@
-console.log('hello, motherfuker')
+alert('Hello, motherfuker!')
