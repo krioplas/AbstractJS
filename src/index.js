@@ -1,7 +1,11 @@
 import '~/sass/library/library.scss'
 import '~/sass/main.sass'
 import '~/scripts/index.js'
-
-if (module.hot) {
-	module.hot.accept()
-}
+// import './scripts/number'
+// import './scripts/string'
+// import './scripts/TemplateString'
+// import './scripts/object'
+// import './scripts/1.2/condoperators'
+// import './scripts/1.2/switchCase'
+// import './scripts/1.2/for'
+import './scripts/1.2/function'

@@ -27,10 +27,6 @@ module.exports = {
 		assetModuleFilename: 'img/[name][ext]',
 	},
 
-	experiments: {
-		asset: true,
-	},
-
 	resolve: {
 		extensions: [
 			'.js',
