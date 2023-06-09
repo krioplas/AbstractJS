@@ -3,14 +3,28 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Webpack Template</title>
+		<title>Тестовый сервер</title>
 	</head>
-	<body>
-		<header class="header"></header>
+	<body style="background-color: #2F4F4F;">
+		<header class="header">
+			<p class="example" style="padding: 50px; color:aliceblue"></p>
+			<script>
+				console._log = console.log;
+				console.log = function() {
+				 document.querySelector('.example').innerText = arguments[0];
+				 console._log.apply(null, arguments);
+				
+				}			
+				</script>
+		</header>
 		<!-- /.header -->
 		<main>
 			<section class="section"></section>
-			<!-- /.section -->
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
 		</main>
 		<footer class="footer"></footer>
 		<!-- /.footer -->
